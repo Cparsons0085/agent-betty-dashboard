@@ -9,68 +9,60 @@
 </head>
 
 <body>
-  <div class="app-container">
-    <!-- Sidebar Container -->
-    <div id="sidebar-container"></div>
-
-    <!-- Main Dashboard -->
-    <main class="dashboard">
-      <h1>Welcome, Betty</h1>
-      <p class="tagline">Automate your accounting. Relax your mind.</p>
-
-      <!-- Task Buttons Container -->
-      <div id="task-buttons" class="card-grid"></div>
-
-      <!-- Task Log -->
-      <div class="log-section">
-        <h2>📝 Task Log</h2>
-        <ul id="log"></ul>
-      </div>
-    </main>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <p class="loading-text">Loading Agent Betty...</p>
   </div>
 
-  <!-- Modal for Payroll -->
-  <div id="payrollModal" class="modal hidden">
-    <div class="modal-content">
-      <h2>Run Payroll</h2>
-      <input type="text" id="employeeName" placeholder="Employee Name" />
-      <input type="number" id="hoursWorked" placeholder="Hours Worked" />
-      <select id="frequency">
-        <option value="Weekly">Weekly</option>
-        <option value="Biweekly">Biweekly</option>
-      </select>
-      <div class="modal-buttons">
-        <button onclick="submitPayroll()">Submit</button>
-        <button onclick="closePayrollModal()">Cancel</button>
+  <!-- App Container (hidden until loaded) -->
+  <div id="app" class="hidden">
+    <div class="app-container">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <!-- Splash Screen -->
+      <div class="splash-screen fade-in">
+        <main class="dashboard">
+          <h1>Welcome, Betty</h1>
+          <p class="tagline">Automate your accounting. Relax your mind.</p>
+
+          <!-- Live Demo Button -->
+          <div class="demo-button-container">
+            <a href="https://cparsons0085.github.io/agent-betty-dashboard/" class="demo-button" target="_blank">
+              🚀 Launch Live Demo
+            </a>
+          </div>
+
+          <!-- Task Buttons -->
+          <div id="task-buttons" class="card-grid"></div>
+
+          <!-- Task Log -->
+          <div class="log-section">
+            <h2>📝 Task Log</h2>
+            <ul id="log"></ul>
+          </div>
+        </main>
       </div>
     </div>
-  </div> <!-- ✅ closes payroll modal -->
+  </div>
+
+  <!-- Modals and Scripts -->
+  <div id="payrollModal" class="modal hidden">...</div>
+  <div class="ai-bubble" onclick="alert('Hi, I’m Agent Betty! What can I help you automate today?')">🧠 Ask Agent Betty</div>
+  <div id="approvalModal" class="modal hidden">...</div>
 
   <!-- Script -->
+  <script>
+    // Simulate loading
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loading-screen").style.display = "none";
+        document.getElementById("app").classList.remove("hidden");
+      }, 1000); // adjust duration here
+    });
+  </script>
   <script src="script.js"></script>
-
-  <!-- Floating AI Assistant Bubble -->
-  <div class="ai-bubble" onclick="alert('Hi, I’m Agent Betty! What can I help you automate today?')">
-    🧠 Ask Agent Betty
-  </div>
-
-  <!-- Approval Modal -->
-  <div id="approvalModal" class="modal hidden">
-    <div class="modal-content">
-      <h2>Finalize Payroll</h2>
-      <p>All steps complete. Would you like to approve this payroll?</p>
-      <div class="modal-buttons">
-        <button class="back-button" onclick="goBackFromApproval()">
-          <img src="assets/square-rounded-arrow-left.svg" alt="Back" class="icon-back" />
-          Go Back
-        </button>
-        <button onclick="approvePayroll()">✅ Approve</button>
-        <button onclick="approveAndPrint()">🖨️ Approve & Print</button>
-      </div>
-    </div>
-  </div>
-
-
 </body>
 
 </html>
