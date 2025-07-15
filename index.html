@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Betty Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Sidebar Container -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+      <h1>Welcome, Betty</h1>
+      <p class="tagline">Automate your accounting. Relax your mind.</p>
+
+      <!-- Task Buttons Container -->
+      <div id="task-buttons" class="card-grid"></div>
+
+      <!-- Task Log -->
+      <div class="log-section">
+        <h2>📝 Task Log</h2>
+        <ul id="log"></ul>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal for Payroll -->
+  <div id="payrollModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Run Payroll</h2>
+      <input type="text" id="employeeName" placeholder="Employee Name" />
+      <input type="number" id="hoursWorked" placeholder="Hours Worked" />
+      <select id="frequency">
+        <option value="Weekly">Weekly</option>
+        <option value="Biweekly">Biweekly</option>
+      </select>
+      <div class="modal-buttons">
+        <button onclick="submitPayroll()">Submit</button>
+        <button onclick="closePayrollModal()">Cancel</button>
+      </div>
+    </div>
+  </div> <!-- ✅ closes payroll modal -->
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+  <!-- Floating AI Assistant Bubble -->
+  <div class="ai-bubble" onclick="alert('Hi, I’m Agent Betty! What can I help you automate today?')">
+    🧠 Ask Agent Betty
+  </div>
+
+  <!-- Approval Modal -->
+  <div id="approvalModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Finalize Payroll</h2>
+      <p>All steps complete. Would you like to approve this payroll?</p>
+      <div class="modal-buttons">
+        <button class="back-button" onclick="goBackFromApproval()">
+          <img src="assets/square-rounded-arrow-left.svg" alt="Back" class="icon-back" />
+          Go Back
+        </button>
+        <button onclick="approvePayroll()">✅ Approve</button>
+        <button onclick="approveAndPrint()">🖨️ Approve & Print</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

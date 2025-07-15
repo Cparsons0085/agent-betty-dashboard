@@ -1,0 +1,318 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0b1c;
+  color: #e0e6f7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25em;
+}
+
+p.tagline {
+  color: #999ecf;
+  margin-bottom: 1.5em;
+  font-style: italic;
+}
+
+/* Layout Container */
+.app-container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 80px;
+  background: #16142a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em 0;
+  border-right: 2px solid #292545;
+}
+
+.sidebar h2 {
+  color: #6affcc;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #555f87;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #202040;
+  color: #fff;
+  box-shadow: 0 0 10px #00ffe7;
+}
+
+.sidebar-label {
+  margin-top: auto;
+  color: #666;
+  font-size: 0.75rem;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+/* Main Dashboard Area */
+.dashboard {
+  flex-grow: 1;
+  padding: 2em;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1c1b2e;
+  border-radius: 20px;
+  padding: 1.2em;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+.card:hover {
+  background: #252447;
+  box-shadow: 0 0 15px #00ffe7, 0 0 10px rgba(0, 255, 255, 0.3);
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 50px;
+  margin-bottom: 0.8em;
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: #f0f5ff;
+}
+
+/* Task Log */
+.log-section {
+  margin-top: 2em;
+  background: #1a1932;
+  padding: 1em;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.05);
+}
+
+#log {
+  list-style: none;
+  margin-top: 1em;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#log li {
+  margin: 0.4em 0;
+  border-left: 4px solid #00ffe7;
+  padding-left: 10px;
+  color: #ccddff;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #202040;
+  padding: 2em;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 0 15px #00ffe7;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 0.7em;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  background: #292959;
+  color: #fff;
+  box-shadow: 0 0 8px #a5d8ff;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  outline: none;
+  box-shadow: 0 0 12px #88fff0, 0 0 8px #00ffe7;
+  transform: scale(1.03);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  background: #00ffe7;
+  border: none;
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-buttons button:hover {
+  background: #88fff0;
+}
+
+.icon-glow {
+  width: 50px;
+  transition: 0.3s ease;
+}
+
+.icon-glow:hover {
+  transform: scale(1.1);
+}
+
+/* Neon Pastel Glow Colors */
+.mint {
+  filter: drop-shadow(0 0 8px #9effe6);
+}
+
+.coral {
+  filter: drop-shadow(0 0 8px #ffb4a2);
+}
+
+.sky {
+  filter: drop-shadow(0 0 8px #a5d8ff);
+}
+
+.pink {
+  filter: drop-shadow(0 0 8px #fcb1ff);
+}
+
+.lilac {
+  filter: drop-shadow(0 0 8px #c1b5ff);
+}
+
+.peach {
+  filter: drop-shadow(0 0 8px #ffe0b2);
+}
+
+.green {
+  filter: drop-shadow(0 0 8px #baffc9);
+}
+
+.lemon {
+  filter: drop-shadow(0 0 8px #fff7a3);
+}
+
+/* 🧠 AI Assistant Bubble */
+.ai-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(145deg, #282853, #3b3b72);
+  color: #fff;
+  border-radius: 50px;
+  padding: 14px 20px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.ai-bubble:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffe7;
+}
+
+.card img {
+  width: 50px;
+  filter: invert(1); /* turns black icons white */
+  opacity: 0.9;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+/* Modal Buttons with Pastel Glow Colors */
+.modal-buttons button:first-child {
+  background: #baffc9;
+  box-shadow: 0 0 10px #baffc9;
+}
+
+.modal-buttons button:first-child:hover {
+  background: #d1ffe0;
+  box-shadow: 0 0 15px #baffc9;
+}
+
+.modal-buttons button:last-child {
+  background: #fcb1ff;
+  box-shadow: 0 0 10px #fcb1ff;
+}
+
+.modal-buttons button:last-child:hover {
+  background: #ffd9ff;
+  box-shadow: 0 0 15px #fcb1ff;
+}
+
+.back-button {
+  background: transparent;
+  color: #ccc;
+  border: 2px solid #555;
+  border-radius: 8px;
+  padding: 0.6em 1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.back-button:hover {
+  background: #2c2c4f;
+  border-color: #88fff0;
+  color: #fff;
+  box-shadow: 0 0 12px #88fff0;
+}
+
+.icon-back {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 5px #88fff0);
+}
