@@ -75,39 +75,45 @@ p.tagline {
 .dashboard {
   flex-grow: 1;
   padding: 2em;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Card Grid */
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
 }
 
 .card {
-  background: #1c1b2e;
-  border-radius: 20px;
-  padding: 1.2em;
+  background-color: #1a1a2e;
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
   text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
 }
 
 .card:hover {
-  background: #252447;
-  box-shadow: 0 0 15px #00ffe7, 0 0 10px rgba(0, 255, 255, 0.3);
-  transform: scale(1.03);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.5);
 }
 
 .card img {
-  width: 50px;
-  margin-bottom: 0.8em;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
 }
 
 .card h3 {
   font-size: 1rem;
-  color: #f0f5ff;
+  color: #ffffff;
+  margin-top: 0.5rem;
 }
 
 /* Task Log */
@@ -216,6 +222,10 @@ p.tagline {
 
 .sky {
   filter: drop-shadow(0 0 8px #a5d8ff);
+}
+
+.cyan {
+  box-shadow: 0 0 10px #00ffffaa;
 }
 
 .pink {
